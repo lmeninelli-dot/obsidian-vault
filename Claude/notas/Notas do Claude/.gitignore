@@ -1,0 +1,17 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+.DS_Store
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Node (caso use plugins que precisem)
+node_modules/
