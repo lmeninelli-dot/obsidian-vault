@@ -1,7 +1,7 @@
 # 🤖 Claude — Índice de Entregas
 
 > Atualizado automaticamente. Ponto de entrada do vault.
-> Última atualização: 2026-07-06
+> Última atualização: 2026-07-08
 
 ---
 
@@ -49,6 +49,7 @@
 ## 🔵 Make / Automação
 - [[2026-06-24-make-referencia-2026]] — Make.com 2026 (referência completa)
 - [[2026-06-25-make-gravacoes-calendar-monday]] — Gravações Workise v17: 1 cenário por pessoa (DWD barrado por LGPD), notas Gemini do Calendar → board central Monday (⚠️ pendências ativas)
+- [[2026-07-08-fix-lock-distribuicao-gravacoes-v29]] — Fix `failed to acquire lock` na distribuição: error handler Break (retry) nos módulos que escrevem status/movem o item; checar automação nativa duplicada
 
 ## 📊 Estratégia & Análise
 - [[2026-06-17-otimizacao-calendario]] — Otimização de calendário + blocos de foco
@@ -72,4 +73,4 @@
 - [[2026-07-03-mcp-validator-fase3-dual-conta]] — FASE 3: dual-conta operacional, 20 ferramentas CRUD (endpoint /v2!)
 
 ---
-*Última atualização: 2026-07-06 — 40 notas indexadas.*
+*Última atualização: 2026-07-08 — 41 notas indexadas.*
