@@ -35,5 +35,17 @@ Error handler **Break (retry)** em Mód 11, 12 e 13: `count 3, interval 1min`. E
 ## Fix durável (pendente do usuário)
 Checar no board 18413775650 se existe **automação** "status muda → move grupo" ou "move grupo → muda status". Se existir, ela briga com o Make pela mesma célula → desligar uma das pontas (Make OU automação), não as duas escrevendo `color_mm3f3r3a`.
 
+## v30 — anexa PDF no board do cliente + link
+Problema seguinte: o cenário nunca copiava o PDF (coluna Arquivos `file_mm4e5fa2`) pro board do cliente — não existia módulo de arquivo. Decisão do Lucas: **anexar o PDF de verdade + link de garantia no update**.
+
+Montado via script Python (`scratchpad/build_v30.py`) — muta o objeto JSON, evita escaping manual. Adições:
+- **Mód 17**: var `link_gravacao` = `link_mm3f5ayy.url` (link permanente, fallback).
+- **Mód 22**: var `col_arquivo_id` = `get(map(...columns; "id"; "type"; "file"); 1)` (acha a coluna de arquivo do cliente por TIPO, não título).
+- **Cadeia de download** (antes do Router): Mód 40 `items{assets{public_url}}` → 41 ParseJSON → 42 `http:ActionSendData` GET binário (onerror **Ignore**).
+- **AddFile** `monday:AddFileToFileColumnValueV2` nas duas rotas: Mód 43 (novo item) e 44 (existente), `data={{42.data}}`, best-effort (onerror **Ignore**).
+- **Link** anexado no corpo dos dois `create_update` (Mód 28 e 31).
+
+Degradação graciosa: sem coluna de arquivo no cliente (`col_arquivo_id` vazio) ou download falho → AddFile ignorado e o **link no update** garante o acesso. PDF só anexa onde existe coluna type=file. Arquivo: `Downloads/📹 Distribuição — Gravações v30 (anexa PDF + link).blueprint.json`.
+
 ## Aprendizado
 `builtin:Break` no blueprint: `mapper: {count, interval}` (interval em minutos), anexado como `onerror` (irmão de `mapper`/`metadata`). `dlq:true` no cenário guarda incomplete executions p/ auto-retry. Lock error do Monday = retry resolve; fix real = remover escritor duplicado.

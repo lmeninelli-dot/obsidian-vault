@@ -49,7 +49,7 @@
 ## 🔵 Make / Automação
 - [[2026-06-24-make-referencia-2026]] — Make.com 2026 (referência completa)
 - [[2026-06-25-make-gravacoes-calendar-monday]] — Gravações Workise v17: 1 cenário por pessoa (DWD barrado por LGPD), notas Gemini do Calendar → board central Monday (⚠️ pendências ativas)
-- [[2026-07-08-fix-lock-distribuicao-gravacoes-v29]] — Fix `failed to acquire lock` na distribuição: error handler Break (retry) nos módulos que escrevem status/movem o item; checar automação nativa duplicada
+- [[2026-07-08-fix-lock-distribuicao-gravacoes-v29]] — Fix `failed to acquire lock` na distribuição: error handler Break (retry) nos módulos que escrevem status/movem o item; checar automação nativa duplicada · **v30** anexa PDF (asset→AddFile, best-effort) + link no update
 
 ## 📊 Estratégia & Análise
 - [[2026-06-17-otimizacao-calendario]] — Otimização de calendário + blocos de foco
